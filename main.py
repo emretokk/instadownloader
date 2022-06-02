@@ -5,14 +5,14 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 
 
-myusername = input("Enter username: ")
-mypassword = input("Enter password: ")
-target = input("Enter target: ")
+myusername = "emre.tok05"#input("Enter username: ")
+mypassword = "şevval52207+"#input("Enter password: ")
+target = "i.ssimy"#input("Enter target: ")
 downloaded_count = 0
 
 def opendriver():
     global driver_path
-    driver_path = "Drivers/chromedriver.exe"
+    driver_path = "./Drivers/chromedriver.exe"
     global driver
     driver = webdriver.Chrome(driver_path)
 
@@ -20,7 +20,7 @@ def signin(myusername, mypassword):
     opendriver()
     driver.get(
         "https://www.instagram.com/accounts/login/?source=private_profile")
-    sleep(3)
+    sleep(7)
     username = driver.find_element_by_name('username')
     password = driver.find_element_by_name('password')
     login_button = driver.find_element_by_xpath(
@@ -64,3 +64,4 @@ def download(username):
 	download_images(images_link)
 
 download(target)
+input()
